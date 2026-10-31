@@ -4,7 +4,7 @@
   "main": "app.js",
   "scripts": {
     "start": "nodemon --no-deprecation --env-file=.env app.js",
-    "build": "node build.js"
+    "build": "npm i"
   },
   "author": "",
   "license": "ISC",
