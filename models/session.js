@@ -5,7 +5,7 @@ import mongoose from "mongoose";
 const sessionSchema = new Schema({
     userId:{
         type:Schema.Types.ObjectId,
-        require:true
+        required:true
     },
     createdAt:{
         type:Date,

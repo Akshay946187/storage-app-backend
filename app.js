@@ -6,14 +6,18 @@ import fileRouter from './routes/file.js'
 import userRouter from './routes/user.js'
 import checkAuth from './auth.js'
 import { ConnectDb } from './mongooseDb.js'
+import mongoose from 'mongoose'
 
-ConnectDb()
+
 const mySecret = '_0(+&845'
 const port = process.env.PORT
 
 try {
     
     const app = express()
+      await ConnectDb()
+  console.log("Mongoose readyState:", mongoose.connection.readyState);
+  
 app.use(cors({
     origin:process.env.CLIENT_URL,
    credentials:true
@@ -42,6 +46,7 @@ app.use('/user', userRouter)
 app.listen(3000, () => {
     console.log('Server is running on port 3000')
 })
+
 } catch (error) {
     console.log(error)
 }

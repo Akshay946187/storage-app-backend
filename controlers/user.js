@@ -76,7 +76,7 @@ export const signupController = async (req, res) => {
  export const loginControler = async (req, res) => {
    try {
       const {success,error,data} = loginSchema.safeParse(req.body)
-      console.log({success,error,data})
+      
       if(error){
         return res.status(400).json({error:error.message})
       }
@@ -91,7 +91,7 @@ export const signupController = async (req, res) => {
     }
 
     const allSessions = await Session.find({userId : user.id} )
-    console.log(allSessions.length)
+   
     if(allSessions.length >=1){
       await allSessions[0].deleteOne()
     }

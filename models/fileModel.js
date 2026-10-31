@@ -16,7 +16,7 @@ const fileSchema = new Schema({
     },
     fileSize :{
         type : String,
-        require:true
+        required:true
     },
     isUploading : {
         type : Boolean,

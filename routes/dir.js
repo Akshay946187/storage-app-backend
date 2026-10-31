@@ -4,9 +4,11 @@ import { deleteDirController, getDirController, postDirController, updateDirCont
 
 const router = Router()
 
-router.get('/:id?', getDirController)
+router.get("/", getDirController);
+router.get("/:id", getDirController);
 
-router.post('/:parentDirId?', postDirController)
+router.post('/', postDirController)
+router.post('/:parentDirId', postDirController)
 
 
 router.patch('/:id', updateDirController)
