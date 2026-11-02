@@ -7,7 +7,7 @@ const checkAuth = async (req, res, next) => {
 
     const { sid } = req.signedCookies;
 
-
+    
 
     try {
         if (!sid) {
